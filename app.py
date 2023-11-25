@@ -27,5 +27,3 @@ def homepage():
 
     return render_template("index.html", top_headlines=top_headlines, sources=sources)
 
-if __name__ == '__main__':
-    app.run(debug=True)
