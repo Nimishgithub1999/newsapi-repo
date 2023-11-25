@@ -1,10 +1,16 @@
 from flask import Flask, render_template
 from newsapi import NewsApiClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
+
+apiKey = os.getenv('apikey')
 # Initialize News API client
-newsapi = NewsApiClient(api_key='5519a303a0574dd99f6272b39f0fbc37')
+newsapi = NewsApiClient(api_key=apiKey)
 
 @app.route('/')
 def homepage():
